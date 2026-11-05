@@ -1,0 +1,6 @@
+id,date,type,amount,category,note,by
+1,2026-11-01,expense,420.00,rent,loyer,lea
+2,2026-11-02,expense,62.40,food,Carrefour,lea
+3,2026-11-03,expense,18.00,leisure,bar with friends,lea
+4,2026-11-04,expense,8.50,food,boulangerie,lea
+5,2026-11-05,income,55.00,tips,café tips,lea

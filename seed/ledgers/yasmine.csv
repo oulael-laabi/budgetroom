@@ -1,0 +1,11 @@
+id,date,type,amount,category,note,by
+1,2026-11-01,expense,1200.00,rent,November rent,yasmine
+2,2026-11-01,expense,50.00,phone,recharge,yasmine
+3,2026-11-02,expense,210.00,food,weekly groceries,yasmine
+4,2026-11-02,expense,30.00,transport,tram card top-up,yasmine
+5,2026-11-03,expense,45.00,food,lunch with classmates,yasmine
+6,2026-11-03,expense,120.00,study,printing + books,yasmine
+7,2026-11-04,expense,60.00,transport,taxis,yasmine
+8,2026-11-04,expense,90.00,leisure,cinema + snacks,yasmine
+9,2026-11-05,expense,35.00,food,coffee + snack,yasmine
+10,2026-11-05,expense,40.00,transport,petit taxi,yasmine

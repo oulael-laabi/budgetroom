@@ -1,0 +1,7 @@
+id,date,type,amount,category,note,by
+1,2026-11-01,expense,1600.00,rent,rent,maria
+2,2026-11-01,expense,700.00,childcare,daycare,maria
+3,2026-11-02,expense,184.30,groceries,H-E-B,maria
+4,2026-11-03,expense,48.00,gas,gas,maria
+5,2026-11-04,expense,65.00,kids,soccer cleats,maria
+6,2026-11-05,expense,39.90,leisure,pizza night,maria

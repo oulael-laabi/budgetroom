@@ -1,0 +1,7 @@
+id,date,type,amount,category,note,by
+1,2026-11-01,expense,3000.00,rent,rent,karim
+2,2026-11-01,expense,1500.00,school,school fees,karim
+3,2026-11-02,expense,650.00,groceries,Marjane big shop,karim
+4,2026-11-03,expense,200.00,transport,fuel,karim
+5,2026-11-04,expense,180.00,health,pharmacy,karim
+6,2026-11-05,expense,140.00,groceries,souk vegetables,karim

@@ -1,0 +1,13 @@
+{
+  "id": "yasmine",
+  "name": "Yasmine",
+  "type": "student",
+  "city": "Rabat",
+  "currency": "MAD",
+  "chat_users": ["yasmine"],
+  "income": {"scholarship": 700, "parents": 1500, "tutoring": 800},
+  "fixed": {"rent": 1200, "phone": 50},
+  "categories": {"food": 900, "transport": 200, "leisure": 250, "study": 150, "other": 100},
+  "savings_goal": 150,
+  "notes": "Shares a flat near campus. Wants to save for a laptop."
+}

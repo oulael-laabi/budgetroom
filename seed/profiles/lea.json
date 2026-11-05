@@ -1,0 +1,13 @@
+{
+  "id": "lea",
+  "name": "Léa",
+  "type": "student",
+  "city": "Lyon",
+  "currency": "EUR",
+  "chat_users": ["lea"],
+  "income": {"grant": 450, "part_time_job": 400, "parents": 200},
+  "fixed": {"rent": 420, "phone": 10, "transport_pass": 25},
+  "categories": {"food": 300, "leisure": 100, "study": 40, "other": 55},
+  "savings_goal": 100,
+  "notes": "Works weekends in a café."
+}

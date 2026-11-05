@@ -1,0 +1,13 @@
+{
+  "id": "maria",
+  "name": "Maria",
+  "type": "parent",
+  "city": "Austin",
+  "currency": "USD",
+  "chat_users": ["maria"],
+  "income": {"salary": 4200},
+  "fixed": {"rent": 1600, "childcare": 700, "utilities": 220, "car_payment": 380},
+  "categories": {"groceries": 600, "gas": 160, "kids": 150, "leisure": 90},
+  "savings_goal": 300,
+  "notes": "Single parent of two kids, building an emergency fund."
+}

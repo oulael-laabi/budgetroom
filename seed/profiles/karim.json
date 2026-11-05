@@ -1,0 +1,14 @@
+{
+  "id": "karim",
+  "name": "Karim",
+  "type": "parent",
+  "city": "Casablanca",
+  "currency": "MAD",
+  "chat_users": ["karim"],
+  "income": {"salary": 9000},
+  "fixed": {"rent": 3000, "school": 1500, "bills": 600},
+  "categories": {"groceries": 2000, "transport": 500, "health": 300, "family": 600, "leisure": 300},
+  "allowance_category": "family",
+  "savings_goal": 200,
+  "notes": "Father of Yasmine (student in Rabat) and a younger child at school."
+}
