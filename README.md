@@ -7,7 +7,7 @@ the money runs out, and answers "can I afford this?" with real numbers.
 
 Built solo for the WeMakeDevs **Flip the Switch** hackathon (Track 2: Personal/Creative).
 
-🎬 **Demo video:** VIDEO_LINK_HERE
+🎬 **Demo video:** https://youtu.be/_RICgqCq1vA
 
 ![BudgetRoom in the Switch Console](docs/screenshot.png)
 
