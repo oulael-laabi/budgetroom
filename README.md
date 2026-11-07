@@ -9,7 +9,7 @@ Built solo for the WeMakeDevs **Flip the Switch** hackathon (Track 2: Personal/C
 
 🎬 **Demo video:** VIDEO_LINK_HERE
 
-![BudgetRoom in a Mattermost room](docs/screenshot.png)
+![BudgetRoom in the Switch Console](docs/screenshot.png)
 
 Real replies from the demo (every number comes from `budget.py`):
 
@@ -95,7 +95,7 @@ It runs **Claude Code**, with the Switch agent directory pointing at this repo, 
 
 | Setting | Value | Why |
 |---|---|---|
-| Room | `#budget-demo` (any room works; one per family in real use, e.g. `#alaoui-family`) | the household talks to the coach together |
+| Where | a **direct chat** in the Switch Console (used in the demo video) **or** a Mattermost room bridged by Switch, e.g. `#budget-demo` (one per family in real use, e.g. `#alaoui-family`) | same agent, same files, either surface |
 | Members | the people + `@budgetroom` (added with `/invite @budgetroom`) | Switch provisions the bot identity |
 | Trigger | mention `@budgetroom`; it answers in the thread | keeps the room readable |
 | Who can talk to the agent | **Anyone** | demo users aren't Switch accounts |
