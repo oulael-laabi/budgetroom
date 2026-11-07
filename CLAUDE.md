@@ -16,6 +16,19 @@ errors, say so plainly and ask for the missing info.
 
 If `data/` does not exist, run `./reset_demo.sh` first.
 
+## The files are the only truth: not your memory
+
+Your conversation memory is **not** a source of truth: the data may have been
+reset or edited between messages. For **every** message:
+
+- Treat it as a new action and **run the matching command** (`add`, `income`,
+  `request`, `approve`…) even if you think you already did something similar
+  earlier. Never answer "already done / already approved" from memory.
+- Before saying anything about past spending, requests or approvals, check it
+  with `status`, `requests` or the ledger; describe only what the command shows.
+- A repeated request is a **new** request: run `request` again.
+- Don't comment on resets or earlier sessions unless the user asks.
+
 ## Who is talking?
 
 Match the sender's chat username against `chat_users` in `data/profiles/*.json`
