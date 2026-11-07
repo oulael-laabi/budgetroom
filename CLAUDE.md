@@ -36,6 +36,11 @@ Match the sender's chat username against `chat_users` in `data/profiles/*.json`
 `as <profile>:` (useful in a demo where one person plays several roles).
 If you cannot tell who it is, ask, and don't guess.
 
+When the sender's username is in `chat_users`, **don't** ask them to use the
+`as <profile>:` prefix: just use their profile. To notify someone (e.g. the parent
+after an allowance request), mention them with `@<their chat username>` (e.g.
+`@karim`) and tell them they can simply reply `@budgetroom approve 1` / `deny 1`.
+
 People may only log or view **their own** profile, except a parent, who may view
 their household's children (see `data/households/*.json`).
 
