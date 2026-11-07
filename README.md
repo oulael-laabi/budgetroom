@@ -84,7 +84,30 @@ pip install -r requirements.txt       # optional, for PNG charts
 python3 budget.py report maria --png report.png
 ```
 
-### With Switch
+## How BudgetRoom uses Switch
+
+**Agent connected:** one agent, `budgetroom`, created in the Switch Console
+(0.40.1) on a local Switch server (0.31.0: switch-core + Postgres + Mattermost).
+It runs **Claude Code**, with the Switch agent directory pointing at this repo, so
+`CLAUDE.md` is its system of instructions and `budget.py` is its only tool for money.
+
+**Channel setup (Mattermost via the Switch bridge):**
+
+| Setting | Value | Why |
+|---|---|---|
+| Room | `#budget-demo` (any room works; one per family in real use, e.g. `#alaoui-family`) | the household talks to the coach together |
+| Members | the people + `@budgetroom` (added with `/invite @budgetroom`) | Switch provisions the bot identity |
+| Trigger | mention `@budgetroom`; it answers in the thread | keeps the room readable |
+| Who can talk to the agent | **Anyone** | demo users aren't Switch accounts |
+| Identity | Mattermost username → `chat_users` in the profile, or `as <profile>:` prefix | one coach, many people, private budgets |
+| Session | one Switch session per room; first reply is "Starting a session…" | new room = clean context |
+
+**Message flow:** someone posts in the room → the Switch bridge forwards it to the
+`budgetroom` agent → Claude Code reads `CLAUDE.md`, picks the right `budget.py`
+command(s) and runs them in this repo → it rephrases the script output → Switch posts
+the reply in the thread. The state lives in `data/`, never in the chat.
+
+### Run it with Switch
 
 1. Install and start Switch (local server with Mattermost).
 2. Create an agent whose working directory is this repo (so Claude Code picks up `CLAUDE.md`).
