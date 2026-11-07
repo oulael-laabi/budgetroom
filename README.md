@@ -7,12 +7,28 @@ the money runs out, and answers "can I afford this?" with real numbers.
 
 Built solo for the WeMakeDevs **Flip the Switch** hackathon (Track 2: Personal/Creative).
 
+🎬 **Demo video:** VIDEO_LINK_HERE
+
+![BudgetRoom in a Mattermost room](docs/screenshot.png)
+
+Real replies from the demo (every number comes from `budget.py`):
+
 ```
 Yasmine: spent 85 on groceries and 20 for a taxi
-BudgetRoom: ✅ Logged. 🟢 food 375/900 MAD · 🟡 transport 150/200 MAD (75%, day 5)
-Yasmine: can I afford a 350 MAD concert ticket?
-BudgetRoom: ❌ Not without breaking the plan: 620 MAD left for 26 days (~24/day),
-            and leisure would go 190 MAD over. A 100 MAD ticket would be tight but OK.
+BudgetRoom: Got it, Yasmine, both logged ✅
+            🟢 food: 375 MAD / 900 MAD (42%)
+            🟡 transport: 150 MAD / 200 MAD (75%)
+            865 MAD flexible left this month. Tram or bus could stretch the last 50 MAD 🚋
+Yasmine: can I afford a 200 concert ticket?
+BudgetRoom: ❌ Not right now. You'd have 665 MAD left for 24 days (~27.71 MAD/day)
+            but your plan assumes ~53.33 MAD/day, and leisure would go 40 MAD over.
+Yasmine: can I get 300 from my parents for the train home?
+BudgetRoom: 📨 Request #1 sent. Karim: possible but tight, you'd have 2,230 MAD
+            left for 24 days (~92.92 MAD/day vs ~123.33 planned).
+Karim: approve 1
+BudgetRoom: ✅ 300 MAD recorded from Karim to Yasmine. No real money has moved.
+Léa: j'ai dépensé 12€ au resto
+BudgetRoom: C'est noté, Léa ✅ 🟢 food : 82,90 € / 300 € · il te reste 449,10 €.
 ```
 
 ## Profiles in the demo
@@ -40,6 +56,12 @@ Mattermost room ──► Switch ──► Claude Code (reads CLAUDE.md)
 
 - **The LLM never does arithmetic.** It parses messages and calls `budget.py`, which
   owns every number. Answers are deterministic and tested.
+- **Files beat memory.** A Switch session keeps chat context across messages, so the
+  agent is told (in `CLAUDE.md`) to re-run a command for every message and to trust only
+  the files. We hit exactly this bug in testing: after a data reset the bot "remembered" an
+  approval that no longer existed. The rule fixed it.
+- **Coaching, not advice:** it refuses investment/crypto/loan questions and steers back
+  to the person's own savings goal.
 - **Plain files as state:** profiles are JSON, ledgers are CSV. You can open them in a
   spreadsheet, diff them in git, and nothing is hidden in a database.
 - **Fixed costs** (rent, phone, school) are reserved up front; the agent coaches on the
@@ -66,9 +88,13 @@ python3 budget.py report maria --png report.png
 
 1. Install and start Switch (local server with Mattermost).
 2. Create an agent whose working directory is this repo (so Claude Code picks up `CLAUDE.md`).
-3. Invite it to rooms, e.g. `#yasmine-budget`, `#alaoui-family`, `#lea-budget`.
-4. Create Mattermost users matching `chat_users` in the profiles, or prefix messages
+3. In the agent settings set **Who can talk to your agent → Anyone**; otherwise the
+   bot stays silent (switch-core logs `sender not claimed by any Switch user`).
+4. Invite it to rooms (`/invite @budgetroom`), e.g. `#yasmine-budget`, `#alaoui-family`.
+5. Create Mattermost users matching `chat_users` in the profiles, or prefix messages
    with `as yasmine:` when demoing alone.
+6. After `./reset_demo.sh`, start a fresh session (new room or "New session in this
+   room") so the agent does not carry over chat context from before the reset.
 
 ## Not financial advice
 
